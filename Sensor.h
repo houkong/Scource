@@ -1,12 +1,13 @@
 #pragma once
 class Sensor{
-	pin;
+	pin; //The pin to which the sensor is attached
 public:
 	Sensor(int _pin):pin(_pin) {
 		pinMode(pin, INPUT);
 	}
-	int Measure() = 0;
-
+	int Measure() {
+		return analogRead(pin);
+	}
 	void print() {
 		int data;
 		data = this->Measure();
